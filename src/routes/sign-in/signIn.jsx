@@ -1,17 +1,16 @@
 import React, { memo } from 'react'
-import { signInWithGooglePopup, createUserDocFromAuth } from '../../utils/firebase/firebase.utils'
+
+import SignUpForm from '../../components/sing-up-form/sign-up-form.component'
+import SignInForm from '../../components/sing-in-form/sing-in-form.component'
 const signIn = memo(() => {
-  const logGoogleUser =async () => {
-    const {user} = await signInWithGooglePopup()
-   const userDocRef =await createUserDocFromAuth(user)
-   console.log(userDocRef);
-  }
+
   return (
-    <>
-    <div>sign-in.component</div>
-    <button onClick={logGoogleUser}>Sign in With Google Popup</button>
-    </>
+    <div className='flex justify-between max-w-5xl my-[30px] mx-auto'>
+<SignInForm></SignInForm>
+<SignUpForm></SignUpForm>
+    </div>
   )
 })
+
 
 export default signIn

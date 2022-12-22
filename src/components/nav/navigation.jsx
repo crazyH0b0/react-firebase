@@ -1,9 +1,11 @@
-import React, { memo } from 'react'
+import React, { memo, useContext } from 'react'
 import { Outlet } from 'react-router-dom'
 import {ReactComponent as CrownLogo} from '../../assets/crown.svg'
+import { UserContext } from '../../context/user.context'
 import './navigation.scss'
 const navigation = memo(() => {
-
+  const {currentUser} = useContext(UserContext)
+  console.log(currentUser);
   return (
     <div className='px-8'>
     <div className='flex w-full h-[70px] justify-between  items-center'>
